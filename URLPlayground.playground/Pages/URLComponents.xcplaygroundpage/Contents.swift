@@ -49,3 +49,32 @@ udacityAppURL.path = AppStore.udacityPath
 udacityAppURL.queryItems = [URLQueryItem(name: AppStore.ParameterKey.mediaType.rawValue, value: AppStore.MediaType.mobileApps.rawValue)]
 print(udacityAppURL)
 
+// MARK: 8.3 Exercise solution
+var exerciseUrl = URLComponents.init()
+exerciseUrl.scheme = "https"
+exerciseUrl.host = "google.com"
+exerciseUrl.path = "/search"
+exerciseUrl.queryItems = [URLQueryItem(name: "query", value: "udacity")]
+print(exerciseUrl)
+
+// MARK: 8.4 Exercise Solution
+struct GoogleSearch {
+    static let scheme = "https"
+    static let host = "google.com"
+    static let path = "search"
+    static let queryName = "query"
+    static let udacitySearchTerm = "udacity"
+}
+
+var components = URLComponents()
+
+// then modify the code to use the constants in the GoogleSearch struct
+
+components.scheme = GoogleSearch.scheme
+components.host = GoogleSearch.host
+components.path = GoogleSearch.path
+components.queryItems = [URLQueryItem(name: GoogleSearch.queryName, value: GoogleSearch.udacitySearchTerm)]
+
+print(components.url!)
+
+

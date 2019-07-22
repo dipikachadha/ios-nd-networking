@@ -28,3 +28,12 @@ simpleURL?.appendPathComponent("id819700933")
 print("simpleURL: \(simpleURL!)" )
 simpleURL?.appendPathComponent("?mt=8")
 print("simpleURL: \(simpleURL!)" )
+
+// MARK: Exercise solution
+let website = "http://www.udacity.com"
+var exerciseUrl = URL(string: website) as! URL
+print(exerciseUrl)
+
+// JUNK: website.appendPathComponent("ios")
+exerciseUrl.appendPathComponent("ios")
+print(exerciseUrl)
