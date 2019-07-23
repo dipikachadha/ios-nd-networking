@@ -13,6 +13,7 @@
 		4335484122E6A4CB00B40459 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4335484022E6A4CB00B40459 /* Assets.xcassets */; };
 		4335484422E6A4CB00B40459 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4335484222E6A4CB00B40459 /* LaunchScreen.storyboard */; };
 		4335484F22E6A5C800B40459 /* DogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4335484E22E6A5C800B40459 /* DogAPI.swift */; };
+		4338F75022E7C773008E77F5 /* DogImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338F74F22E7C773008E77F5 /* DogImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4335484322E6A4CB00B40459 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4335484522E6A4CB00B40459 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4335484E22E6A5C800B40459 /* DogAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogAPI.swift; sourceTree = "<group>"; };
+		4338F74F22E7C773008E77F5 /* DogImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DogImage.swift; path = "../../../../../../../../../System/Volumes/Data/Users/DCJIndieApps/Projects/Udacity Example Apps/ios-nd-networking/myRandog/myRandog/myRandog/Model/DogImage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				4335484E22E6A5C800B40459 /* DogAPI.swift */,
+				4338F74F22E7C773008E77F5 /* DogImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			files = (
 				4335483C22E6A4CA00B40459 /* ViewController.swift in Sources */,
 				4335483A22E6A4CA00B40459 /* AppDelegate.swift in Sources */,
+				4338F75022E7C773008E77F5 /* DogImage.swift in Sources */,
 				4335484F22E6A5C800B40459 /* DogAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

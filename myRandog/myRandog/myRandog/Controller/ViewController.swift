@@ -20,11 +20,18 @@ class ViewController: UIViewController {
             guard let data = data else {
                 return
             }
-            print(data)
+            
+            let decoder = JSONDecoder()
+            
+            do {
+                let imageData = try decoder.decode(DogImage.self, from: data)
+                print(imageData)
+            } catch {
+                print(error)
+            }
         }
         task.resume()
     }
-
 
 }
 
