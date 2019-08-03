@@ -20,9 +20,10 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         pickerView.dataSource = self
         pickerView.delegate = self
-        
-        DogAPI.requestRandomImage(
-            completionHandler: self.handleRandomImageResponse(dogImage:error:))
+
+        // No longer needed -- call made at pickerView scroll
+        // DogAPI.requestRandomImage(
+        //    completionHandler: self.handleRandomImageResponse(dogImage:error:))
     }
 
     func handleRandomImageResponse(dogImage: DogImage?, error: Error?) {
@@ -56,4 +57,7 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         return breeds[row]
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        DogAPI.requestRandomImage(completionHandler: self.handleRandomImageResponse(dogImage:error:))
+    }
 }
