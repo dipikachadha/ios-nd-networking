@@ -13,7 +13,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var imageView: UIImageView!
-    let breeds: [String] = ["breed1", "breed2"]
+    let breeds: [String] = ["cairn", "corgi", "husky"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,8 @@ class ViewController: UIViewController {
             return
         }
         
-        DogAPI.requestImageFile(url: imageUrl, completionHandler: self.handleImageFileResponse(image:error:))
+        DogAPI.requestImageFile(url: imageUrl, completionHandler:
+            self.handleImageFileResponse(image:error:))
     }
     
     func handleImageFileResponse(image: UIImage?, error: Error?) {
@@ -45,19 +46,23 @@ class ViewController: UIViewController {
 
 extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int { return 1 }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView,
+                    numberOfRowsInComponent component: Int) -> Int {
         return breeds.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView,
+                    titleForRow row: Int,
+                    forComponent component: Int) -> String? {
         return breeds[row]
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        DogAPI.requestRandomImage(completionHandler: self.handleRandomImageResponse(dogImage:error:))
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int,
+                    inComponent component: Int) {
+        print("Fetching image for \(breeds[row])")
+        DogAPI.requestRandomImage(breed: breeds[row], completionHandler:
+            self.handleRandomImageResponse(dogImage:error:))
     }
 }
